@@ -38,7 +38,7 @@ The following graph shows the Generator and Discriminator losses for each of the
 ### Performance Metrics
 We evaluated the performance of each GAN variant using two key metrics:
 
-![Inception Score and FID](metrics_comparison.png)
+![Inception Score and FID](https://github.com/nishitbohra/GAN_Loss_Evaluation/blob/main/results/metrics_comparison.png)
 
 ## Analysis of Results
 
