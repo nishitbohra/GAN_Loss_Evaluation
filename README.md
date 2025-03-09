@@ -33,7 +33,7 @@ gan-loss-comparison/
 ### Loss Curves
 The following graph shows the Generator and Discriminator losses for each of the three loss functions over the training period:
 
-![Generator and Discriminator Losses](loss_comparison.png)
+![Generator and Discriminator Losses](https://github.com/nishitbohra/GAN_Loss_Evaluation/blob/main/results/loss_comparison.png)
 
 ### Performance Metrics
 We evaluated the performance of each GAN variant using two key metrics:
