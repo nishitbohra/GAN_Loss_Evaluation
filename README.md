@@ -1,4 +1,3 @@
-# GAN_Loss_Evaluation
 # Comparative Analysis of GAN Loss Functions
 
 ## Project Overview
@@ -29,17 +28,35 @@ gan-loss-comparison/
 └── README.md
 ```
 
-## Key Metrics
-- **Inception Score (IS)**
-- **Fréchet Inception Distance (FID)**
-- Visual Image Quality
+## Training Results
 
-## Experimental Setup
-- **Dataset**: CIFAR-10
-- **Training**: 50 epochs per loss function
-- **Model Architecture**: 
-  - Generator: Transposed Convolutional Network
-  - Discriminator: Convolutional Neural Network
+### Loss Curves
+The following graph shows the Generator and Discriminator losses for each of the three loss functions over the training period:
 
-## Expected Outcomes
-Comparative analysis of GAN performance across different loss functions, highlighting strengths and limitations of each approach.
+![Generator and Discriminator Losses](loss_comparison.png)
+
+### Performance Metrics
+We evaluated the performance of each GAN variant using two key metrics:
+
+![Inception Score and FID](metrics_comparison.png)
+
+## Analysis of Results
+
+### Loss Patterns
+- **BCE Loss**: Both generator and discriminator losses stabilize around 0.7, showing consistent training dynamics
+- **LSGAN Loss**: After initial convergence, stabilizes with lower loss values around 0.25
+- **WGAN Loss**: Shows near-zero loss values, which is characteristic of Wasserstein distance
+
+### Quality Metrics
+- **Inception Score**: LSGAN achieves the highest score (~2.4), followed by BCE (~2.0), with WGAN significantly lower (~1.0)
+- **FID Score**: LSGAN performs best with the lowest score (~100), BCE follows closely (~120), while WGAN shows much higher values (~370)
+
+## Key Findings
+1. **LSGAN** produces the highest quality and most diverse images based on both metrics
+2. **BCE** offers solid performance as a traditional approach
+3. **WGAN** shows stable training but underperforms in image quality metrics, suggesting potential implementation challenges
+
+## Future Work
+- Implement WGAN-GP (with gradient penalty) to improve Wasserstein GAN performance
+- Test on higher resolution datasets
+- Explore additional loss variants like Hinge Loss and Relativistic GANs
